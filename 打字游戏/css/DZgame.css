@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+.char{
+    width: 50px;
+    height: 50px;
+    background: no-repeat center/cover;
+    text-align: center;
+    line-height: 60px;
+    color: #000;
+    position: absolute;
+    font-size:20px;
+    font-weight: bold;
+    background: url("../img/timg.png") no-repeat;
+}
+.gameJM{
+    width: 1000px;
+    height: 500px;
+    background: pink;
+    margin: 0 auto;
+}
+body,html{
+    width: 1366px;
+    height: 500px;
+}
+body{
+    background: url("../img/bg.jpg") no-repeat;
+    background-size: 1366px 670px;
+}
+.caozuo{
+    width: 150px;
+    height: 670px;
+    /*background: pink;*/
+    padding:100px 15px;
+    box-sizing: border-box;
+}
+.start{
+    width: 120px;
+    height: 60px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background: url("../img/xxk.jpg") no-repeat center/cover;
+    outline: none;
+}
+.restart{
+    width: 120px;
+    height: 60px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background: url("../img/xxk.jpg") no-repeat center/cover;
+    outline: none;
+}
+.gq{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    background: url("../img/xxk.jpg") no-repeat center/cover;
+}
+.HP{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    background: url("../img/xxk.jpg") no-repeat center/cover;
+}
+.score{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    background: url("../img/xxk.jpg") no-repeat center/cover;
+}

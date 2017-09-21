@@ -1,0 +1,210 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.BoFangQiBox{
+    width: 100vw;
+    height: 100vh;
+    /*overflow: hidden;*/
+    background-image: url("../images/4.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ZheZao{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    /*background: rgba(245,255,86,0.5);*/
+}
+.GeMing,.GeShou{
+    width: 100%;
+    /*background: red;*/
+    /*margin: 0px auto;*/
+    /*margin-top: 20px;*/
+    text-align: center;
+    font-size: 30px;
+    line-height: 70px;
+}
+.GeShou{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 10px;
+}
+.licrybox{
+    width: 100%;
+    height: 547px;
+    /*background: pink;*/
+    overflow: hidden;
+}
+.licry{
+    width: 300px;
+    height: 420px;
+    margin: 30px auto;
+    /*background: greenyellow;*/
+    overflow: hidden;
+}
+.licry>li{
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    transition: all 0.5s;
+    box-sizing: border-box;
+}
+.CaoZuo{
+    width:100%;
+    height: 100px;
+    /*border-top:2px solid #dfdfdf;*/
+    box-sizing: border-box;
+    background: rgba(73,137,147,0.8)
+}
+.shangyiqu{
+    width: 60px;
+    height: 60px;
+    float: left;
+    font-size: 30px;
+    padding-left: 13px;
+    line-height: 57px;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 30px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: #dfdfdf;
+    cursor: pointer;
+    border: 2px solid #dfdfdf;
+}
+.bofang{
+    width: 60px;
+    height: 60px;
+    float: left;
+    font-size: 35px;
+    line-height: 52px;
+    padding-left: 13px;
+    margin-top: 20px;
+    margin-right: 30px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: #dfdfdf;
+    cursor: pointer;
+    border: 2px solid #dfdfdf;
+}
+.icon-zanting{
+    font-size: 35px;
+    line-height: 57px;
+    padding-left: 11px;
+}
+.xiayiqu{
+    width: 60px;
+    height: 60px;
+    float: left;
+    font-size: 30px;
+    line-height: 57px;
+    padding-left: 13px;
+    margin-top: 20px;
+    margin-right: 100px;
+    border-radius: 50%;
+    color: #dfdfdf;
+    cursor: pointer;
+    border: 2px solid #dfdfdf;
+    box-sizing: border-box;
+}
+.GeShouimg,.GeShouimg>img{
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 30px;
+    /*background-image: url("../img/mww.jpg");*/
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.shangyiqu:hover,.bofang:hover,.xiayiqu:hover{
+    color: white;
+    border: 2px solid #ffffff;
+}
+.jingdu{
+    width: 320px;
+    height: 80px;
+    float: left;
+    margin-top: 10px;
+    margin-right: 100px;
+    border-radius: 50px;
+    /*background: yellow;*/
+}
+.GeMing1{
+    margin-left: 20px;
+    margin-top: 15px;
+    /*margin-bottom: 20px;*/
+}
+.Time{
+    margin-top: 30px;
+}
+.JinDuTiaoBox{
+    width: 300px;
+    height: 5px;
+    margin-left: 10px;
+    border-radius: 50px;
+    float: left;
+    background-color: #fff;
+}
+.JinDuTiao{
+    width: 300px;
+    height: 5px;
+    background:#0bfbc5;
+    border-radius: 50px;
+}
+.YinLiangBox{
+    width: 200px;
+    height: 80px;
+    float: left;
+    margin-top: 10px;
+    /*background: pink;*/
+    line-height: 80px;
+}
+.YinLiang{
+    clear: both;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    color: #FFffff;
+    font-size: 25px;
+}
+.YLJiinDuBox{
+    width: 100px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #dfdfdf;
+    margin-left: 70px;
+    position: relative;
+}
+.YLJinDuTiao{
+    width:50px;
+    height: 2px;
+    background: #0bfbc5;
+}
+.YLJinDuAnNiu{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    position: absolute;
+    left: 40px;
+    top: -10px;
+    box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.5);
+}
+.jingdu>.Time{
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}

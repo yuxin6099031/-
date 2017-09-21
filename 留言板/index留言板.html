@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            resize: none;
+        }
+        html,body{
+            width: 100%;
+            height:100%;
+        }
+        main{
+            width: 1200px;
+            height:auto;
+            min-height: 300px;
+            background: pink;
+            margin: 20px auto;
+        }
+        main>.content{
+            width:66.67%;
+            height: auto;
+            min-height: 300px;
+            /*float: left;*/
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 20px auto;
+        }
+        .content>li{
+            padding: 6px 15px;
+            border-bottom: 1px solid #89bceb;
+            position: relative;
+        }
+        .content>li>img{
+            width: 56px;
+            height: 56px;
+            position: absolute;
+            z-index: 999;
+            /*第二种*/
+            /*float: left;*/
+        }
+        .content>li>.item{
+            position: relative;
+            /*background: red;*/
+            /*第一种*/
+            margin-left: 58px;
+            /*第二种*/
+            /*float: left;*/
+            /*width:calc(100% - 50px);*/
+        }
+        .item>h3{
+            padding: 5px;
+        }
+        main>.text{
+            width:99%;
+            height: 300px;
+            /*float: right;*/
+            box-sizing: border-box;
+            padding: 10px;
+            color:#ff6700;
+            font-size: 14px;
+            position: relative;
+            /*margin: 0 auto;*/
+        }
+        .text input{
+            width: 20%;
+            border-radius: 3px;
+            border:1px solid #e4eaec;
+            padding:15px 5px;
+            height: 25px;
+            margin: 20px auto;
+        }
+        .text textarea{
+            width: 100%;
+            border-radius: 3px;
+            border:1px solid #e4eaec;
+            padding:15px 5px;
+            height: 100px;
+        }
+        .text .submit{
+            text-align: center;
+            width: 20%;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            background: #89bceb;
+            outline: none;
+            position: absolute;
+            right: 0;
+            bottom: -10px;
+
+        }
+        .tip{
+            color: #000;
+            font-size: 14px;
+            margin: 10px auto;
+            float: right;
+            /*background:yellow;*/
+        }
+        .tip>span{
+            color: #e4eaec;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="box">留言板：</div>-->
+    <!--<textarea value="" name="" id="llb" cols="100" rows="20" placeholder="hello"></textarea>-->
+    <!--<input type="submit" id="tijiao">-->
+    <main>
+        <div class="text">
+            <div class="formGroup">
+                <input type="text" name="user" placeholder="姓名">
+            </div>
+            <div class="formGroup">
+                <textarea name="" placeholder="请说些什么" maxLength="120"></textarea>
+            </div>
+            <div class="formGroup">
+                <div class="tip">
+                    还可以输入
+                    <span>120</span>
+                    字
+                </div>
+            </div>
+            <div class="formGroup">
+                <button class="submit">提交</button>
+            </div>
+        </div>
+        <ul class="content">
+            <li>
+                <img src="jpszls.png" alt="">
+                <div class="item">
+                    <h3>张三</h3>
+                    <p>
+                        这是张三的留言
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    </main>
+</body>
+</html>
+<script src="function.js"></script>
+<script>
+    /*
+    剩余字数 = 总数 - 输入
+              100    str.lenght
+    1.获取内容  value   innerText
+    2.>100          maxlength
+    3.提交  shift+enter   e.shiftKey e.keyCode == 13
+        1)文本域保存 清空 = ''
+        2)插入
+            ele = document.createElement
+            ele.innerText
+     */
+
+    window.onload = function () {
+        let texta = document.querySelector('.formGroup>textarea')
+        let button = document.querySelector('.submit')
+        let inputs = document.querySelector('.formGroup>input')
+        let tip = document.querySelector('.tip>span')
+        let max = texta.maxLength;
+        let content = document.querySelector('.content')
+        let p = document.querySelector('.item>p')
+        let h3 = document.querySelector('.item>h3')
+//        console.log(p)
+//        console.log(h3)
+        texta.onkeyup = function () {
+            let val = this.value.length;
+//            console.log(typeof val)
+            tip.innerText = `${max - val}`;
+//            console.log(typeof tip.innerText)
+        }
+
+        texta.onkeydown = function (e) {
+            inputs.onkeyup = function () {
+                let inputval = this.value
+            }
+            if (e.shiftKey && e.keyCode == 13) {
+                //value 先保存，再清空
+                let val = this.value;
+                let lis = document.createElement('li');
+                lis.innerHTML = `
+                    <img src="jpszls.png" alt="">
+                    <div class="item">
+                        <h3>
+                        ${inputs.value}
+                        </h3>
+                        <p>
+                            ${val}
+                        </p>
+                </div>
+
+                `
+                inputs.value = '';
+                this.value = '';
+//                content.appendChild(lis)
+                content.appstartChild(lis)
+
+            }
+        }
+        button.onclick = function () {
+            inputs.onkeyup = function () {
+                let inputval = this.value
+            }
+            //value 先保存，再清空
+            let val = texta.value;
+            let lis = document.createElement('li');
+            lis.innerHTML = `
+                    <img src="jpszls.png" alt="">
+                    <div class="item">
+                        <h3>
+                        ${inputs.value}
+                        </h3>
+                        <p>
+                            ${val}
+                        </p>
+                </div>
+
+                `
+            inputs.value = '';
+            texta.value = '';
+//                content.appendChild(lis)
+            content.appstartChild(lis)
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    window.onload = function () {
+//        let llb = document.querySelector('#llb')[0];
+//        let tj = document.querySelector('#tijiao')[0];
+//        let value =document.querySelector('#llb').value
+//        let shuru = value.length;
+//        let maxlength = Math.maxLength = 100
+//        console.log(maxlength)
+//        console.log(shuru)
+//        let zongshu = 100;
+//        let shenyu = `总可写${maxlength}字，输入了${shuru}字，剩余${maxlength-shuru}字`;
+//        console.log(shenyu)
+//        llb.onkeydown = function () {
+//
+//        }
+//
+//
+//    }
+
+</script>

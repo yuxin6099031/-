@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZgame</title>
+    <link rel="stylesheet" href="css/DZgame.css">
+    <script src="js/DZgame.js"></script>
+</head>
+<body>
+    <div class="caozuo">
+        <button class="start">开始游戏</button>
+        <button class="restart">重新开始</button>
+        <div class="gq">
+            第 <span>1</span> 关
+        </div>
+        <div class="HP">
+            生命<span>10</span>
+        </div>
+        <div class="score">
+            得分 <span>0</span>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        let start = document.querySelector('.start');
+        let restart = document.querySelector('.restart')
+        let game = new Game();
+        let a = 0;
+        start.onclick =function () {
+            if(a == 1){
+                return
+            }
+            a++;
+            game.start();
+
+        }
+
+        restart.onclick = function () {
+                game.restart();
+
+        }
+
+
+
+    }
+
+
+</script>
